@@ -12,7 +12,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-// Esta es la forma correcta de inicializar con configuración de persistencia
+
 export const db = initializeFirestore(app, {
     ignoreUndefinedProperties: true
 });

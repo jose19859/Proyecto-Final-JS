@@ -1,5 +1,5 @@
 import { collection, getDocs, addDoc } from 'firebase/firestore';
-import { db } from '../src/config/firebase.js'; // Importamos la DB ya inicializada
+import { db } from '../config/firebase.js'; // Importamos la DB ya inicializada
 
 const productsCollection = collection(db, 'items');
 

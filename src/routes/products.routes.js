@@ -1,4 +1,5 @@
 import { Router } from 'express';
+
 import { getProducts, createProduct, deleteProduct } from '../controllers/product.controller.js';
 import { verifyToken } from '../middlewares/auth.middleware.js';
 
