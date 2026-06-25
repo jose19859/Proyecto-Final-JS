@@ -7,7 +7,7 @@ const router = Router();
 
 // Rutas
 router.get('/', getProducts);
-router.post('/create', verifyToken, createProduct);
+router.post('/create', createProduct);
 router.delete('/:id', verifyToken, deleteProduct);
 
 export default router;

@@ -11,13 +11,21 @@ export const getProducts = async (req, res) => {
 
 export const createProduct = async (req, res) => {
     try {
+        console.log("Controlador: Guardando producto real en Firebase...");
+        
+        // Esta es la línea que hace el trabajo real:
         const newProduct = await ProductService.createProduct(req.body);
-        res.status(201).json(newProduct);
+        
+        console.log("Controlador: Guardado exitoso:", newProduct.id);
+        
+        // Devolvemos el producto real que vino de la base de datos
+        return res.status(201).json(newProduct);
+
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        console.error("ERROR AL GUARDAR:", error);
+        return res.status(500).json({ message: "Error al guardar en Firebase", error: error.message });
     }
 };
-
 
 export const deleteProduct = async (req, res) => {
     try {
