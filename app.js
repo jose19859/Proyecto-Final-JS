@@ -1,4 +1,4 @@
-/*import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
 import authRoutes from './src/routes/auth.routes.js';
@@ -13,10 +13,7 @@ app.use(express.json());
 // Aquí conectas las rutas que ya creamos
 app.use('/auth', authRoutes);
 app.use('/api/products', productRoutes);
-*/
-import dotenv from 'dotenv';
-dotenv.config();
-import app from "./app.js";
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+app.get("/", (req, res) => {
+    res.status(200).json({ message: "bienvenidos a la API REST" });
 });
+export default app;
